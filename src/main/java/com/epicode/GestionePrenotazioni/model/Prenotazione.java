@@ -9,7 +9,10 @@ import java.time.LocalDate;
 @Table(name = "prenotazioni", uniqueConstraints = {
         @UniqueConstraint(columnNames = {"utente_id", "dataPrenotazione"})
 })
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
 public class Prenotazione {
 
     @Id
