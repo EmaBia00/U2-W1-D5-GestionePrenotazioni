@@ -8,7 +8,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Builder
 public class Postazione {
 
     @Id
@@ -31,4 +30,12 @@ public class Postazione {
     @ManyToOne
     @JoinColumn(name = "edificio_id", nullable = false)
     private Edificio edificio;
+
+    public Postazione(String codice, String descrizione, TipoPostazione tipo, int maxOccupanti, Edificio edificio) {
+        this.codice = codice;
+        this.descrizione = descrizione;
+        this.tipo = tipo;
+        this.maxOccupanti = maxOccupanti;
+        this.edificio = edificio;
+    }
 }

@@ -8,7 +8,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Builder
 public class Utente {
 
     @Id
@@ -23,4 +22,10 @@ public class Utente {
 
     @Column(nullable = false, unique = true)
     private String email;
+
+    public Utente(String username, String nomeCompleto, String email) {
+        this.username = username;
+        this.nomeCompleto = nomeCompleto;
+        this.email = email;
+    }
 }

@@ -3,12 +3,11 @@ package com.epicode.GestionePrenotazioni.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
-@Table(name = "edifici")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Builder
+@Entity
+@Table(name = "edifici")
 public class Edificio {
 
     @Id
@@ -23,4 +22,10 @@ public class Edificio {
 
     @Column(nullable = false)
     private String citta;
+
+    public Edificio(String nome, String indirizzo, String citta) {
+        this.nome = nome;
+        this.indirizzo = indirizzo;
+        this.citta = citta;
+    }
 }

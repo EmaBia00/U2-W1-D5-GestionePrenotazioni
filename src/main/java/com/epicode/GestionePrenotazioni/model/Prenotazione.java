@@ -5,14 +5,14 @@ import lombok.*;
 
 import java.time.LocalDate;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "prenotazioni", uniqueConstraints = {
         @UniqueConstraint(columnNames = {"utente_id", "dataPrenotazione"})
 })
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Builder
 public class Prenotazione {
 
     @Id
@@ -29,4 +29,11 @@ public class Prenotazione {
 
     @Column(nullable = false)
     private LocalDate dataPrenotazione;
+
+    public Prenotazione(Utente utente, Postazione postazione, LocalDate dataPrenotazione) {
+        this.utente = utente;
+        this.postazione = postazione;
+        this.dataPrenotazione = dataPrenotazione;
+    }
+
 }

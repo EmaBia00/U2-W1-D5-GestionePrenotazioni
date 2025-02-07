@@ -1,0 +1,13 @@
+Descrizione Tabelle:
+Edificio = Un edificio rappresenta una sede fisica dove si trovano le postazioni. È separato dalle postazioni per garantire flessibilità nell'aggiunta o modifica di nuove strutture.
+Postazione = Ogni postazione è un'unità di lavoro disponibile per la prenotazione. È legata a un edificio e ha caratteristiche specifiche come il tipo e il numero massimo di occupanti.
+Utente = Rappresenta una persona che può effettuare prenotazioni. È identificato da uno username unico e ha attributi come nome completo ed email.
+Prenotazione = Simula l'atto di prenotare una postazione per un determinato giorno. Contiene vincoli per garantire la disponibilità e l'unicità delle prenotazioni per utente e data.
+
+
+Relazioni tra le Entità:
+Edificio (1) → (N) Postazione = Un edificio può contenere più postazioni, mentre ogni postazione appartiene a un solo edificio.
+Postazione (1) → (N) Prenotazione = Una postazione può essere prenotata più volte in giorni diversi, ma una prenotazione è sempre riferita a una sola postazione.
+Utente (1) → (N) Prenotazione = Un utente può effettuare più prenotazioni nel tempo, ma solo una prenotazione per giorno.
+
+** Unicità (utente_id, data_prenotazione) in Prenotazione **= Garantisce che un utente non possa prenotare più di una postazione per lo stesso giorno.
